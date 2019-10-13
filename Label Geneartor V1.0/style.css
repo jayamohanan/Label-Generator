@@ -1,0 +1,81 @@
+.dummyDiv{
+    width: 500px;
+    height: 300px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 45px;
+    
+  }
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  .asteric{
+    color: red;
+  }
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  .tab button.active {
+    background-color: #ccc;
+  }
+  .tabcontent {
+    width: 500px;
+    height: 450px;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  .tabcontent {
+    animation: fadeEffect 0.5s; 
+  }
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  input {
+    width: 100%;
+  }
+  select{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+  }
+  table{
+    width:500px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  tr:nth-child(odd) {
+    background-color: #e4e4e1;
+  }
+  .tabcontent button{
+    background-color: #f1f1f1;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 16px;
+    transition: 0.3s;
+    width: 100%;
+  }
+  .tabcontent button:hover {
+    background-color: #ddd;  
+  }
+  

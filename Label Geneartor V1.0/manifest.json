@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Label Generators",
+  "description": "Label Generator for Release Management Operations",
+  "version": "0.9.4",
+  "icons": { "128": "Images/icon_128.png" },
+  "browser_action": {
+    "default_icon": "Images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab","tabs", "storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts":[
+    {
+      "matches":["<all_urls>"],
+      "js":["content.js"]
+    },
+    {
+      "matches":["https://coe.my.salesforce.com/*"],
+      "js":["refresh.js"]
+    }
+   
+  ]
+}

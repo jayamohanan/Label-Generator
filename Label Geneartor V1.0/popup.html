@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Label Generator</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="label.js"></script>
+</head>
+<body>
+<h1>Label Generator</h1>
+
+<div class="tab">
+  <button class="tablinks" id="dataloaderButton">Data Loader</button>
+  <button class="tablinks" id="deploymentButton">Deployment</button>
+  <button class="tablinks" id="ezcommitButton">EZ Commit</button>
+  <button class="tablinks" id="addonsButton">Add-Ons</button>
+  <button class="tablinks" id="settingsButton">Settings</button>
+</div>
+
+<div id="dummyDiv" class="dummyDiv">
+</div>
+
+
+<div class="tabcontent" id="dataloader">
+  <h2><b>Data Loader</b></h2>
+  <div><i > <span class="asteric">*</span> mandatory fields</i></div>
+  
+<table>
+  
+  <tr><td>Request No(RI-0):&nbsp;<sup class="asteric">*</sup></td><td><input type="number" id="reqNo" name="reqNo" placeholder="Last 4 digits" min="1000" max="9999"></td></tr>
+  <tr><td>Org Name:&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="orgName" name="orgName" placeholder="HRO/RFA"></td></tr>
+  <tr><td>Object Name:&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="objectName" name="objectName" ></td></tr>
+  <tr><td>Operation:&nbsp;<sup class="asteric">*</sup></td><td><Select id="operation">
+  <option value="Insert">Insert</option>
+  <option value="Update">Update</option>
+  <option value="Delete">Delete</option>
+  </Select></td></tr>
+  <tr><td>User&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="user" name="user"></td></tr>
+  <tr><td>Box URL</td><td><input type="text" id="boxURL" name="boxURL"></td></tr>
+  <tr><td>If Any Errors</td><td><input type="text" id="successError" placeholder="Success/Errors eg: 750/125"></td></tr>
+</table>
+
+
+
+<table id="saveClearButtons">
+  <tr><td><button id="saveData">Save Data</button></td>
+  <td><button id="clearData">Clear Data</button></td></tr>
+<table>
+<table id="labelButtons">
+  <tr><td><button id="copyExtractLabel">Extract Label</button></td>
+  <td><button id="copyLabel">Label</button></td>
+  <td><button id="copyBoxFolder">Box Folder</button></td></tr>
+</table>
+<table id="chatterAL">
+  <tr><td><button id="copyChatterComment">Chatter Comment</button></td>
+    <td><button id="CompleteDataAL">Action Log</button></td>
+    <td><button id="CompleteDataEA">Effort Analysis</button></td>
+  </tr>
+</table>
+<table>
+  <tr><td><textarea id="outputTextarea" rows="5" cols="60"></textarea></td></tr>
+</table>
+</div>
+
+
+<div class="tabcontent" id="deployment">
+  
+<h2><b>Deployment</b></h2>
+<div><i > <span class="asteric">*</span> mandatory fields</i></div>
+<table>
+  <tr><td>Request No(RI-0):&nbsp;<sup class="asteric">*</sup></td><td><input type="number" id="depReqNo" name="depReqNo" placeholder="Last 4 digits"></td></tr>
+  <tr><td>Deployment Type:&nbsp;<sup class="asteric">*</sup></td><td>
+  <Select id="depType">
+  <option value="orgToOrg">Org-Org</option>
+  <option value="releaseLabel">Release Label</option>
+  </Select></td></tr>
+  <tr><td>Source Org:&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="sourceOrg" name="sourceOrg"></td></tr>
+  <tr><td>Destination Org:&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="destinationOrg" name="destinationOrg"></td></tr>
+  <tr><td>User:&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="depUser" name="depUser"></td></tr>
+  <tr><td>Deployment Label:</td><td><input type="text" id="depLabel" name="depLabel"></td></tr>
+</table>
+<table id="depSaveClear">
+  <tr><td><button id="depSaveData">Save Data</button></td>
+  <td><button id="depClearData">Clear Data</button></td></tr>
+</table>
+<table>
+  <tr>
+    <td><button id="copyDepLabel">Deployment Label</button></td>
+    <td><button id="copyDepChatterComment">Chatter Comment</button></td>
+  </tr>
+</table>
+<table >
+  <tr><td><button id="CompleteDeploymentAL">Action Log</button></td>
+      <td><button id="CompleteDeploymentEA">Effort Analysis</button></td>
+  </tr>
+</table>
+<table >
+  <tr><td><textarea id="depOutputTextarea" rows="5" cols="60"></textarea></td></tr>
+</table>
+</div>
+
+
+<div class="tabcontent" id="ezcommit">
+  <h2><b>EZ Commit</b></h2>
+  <div><i > <span class="asteric">*</span> mandatory fields</i></div>
+  <table>
+    <tr><td>Req No(RI-0):&nbsp;<sup class="asteric">*</sup></td><td><input type="number" id="ezReqNo" name="ezReqNo" placeholder="Last 4 digits"></td></tr>
+    <tr><td>Destination Org:&nbsp;<sup class="asteric">*</sup></td><td><input type="text" id="ezDestinationOrg" name="ezDestinationOrg"><td></tr>
+    <tr><td>Revision Label:</td><td><input type="text" id="ezRevisionLabel" name="ezRevisionLabel"></td></tr>
+  </table>
+  <table>
+    <tr><td><button id="ezSaveData">Save Data</button></td>
+    <td><button id="ezClearData">Clear Data</button></td></tr>
+  </table>
+  <table>
+    <tr><td><button id="copyEZCommitLabel">Commit Label</button></td>
+      <td><button id="CompleteCommitAL">Action Log</button></td>
+        <td><button id="CompleteCommitEA">Effort Analysis</button></td>
+      </tr>
+    </table>
+    <tr><td><textarea id="ezOutputTextarea" rows="5" cols="60"></textarea></td></tr>
+</table>
+</div>
+
+<div class="tabcontent" id="addons">
+  <div><bold>Search Metadata Name</bold></div>
+  <table>
+    <tr><td><input type="text" id="metadataAlias"></td><td><button id="metadataSearch">Search</button></td></tr>
+    <tr><td><div id="metadataActualName"></div></td></tr>
+  </table>
+  </div>
+  </div>
+  
+<div class="tabcontent" id="settings">
+<table>
+<tr>
+  <td><label for="userName">User Name</label></td><td><input type="text" id="settingsUserName" value="Jaya Mohanan"></td>
+</tr>
+</table>
+<button id="saveUserName">Save</button>
+
+</body>
+</html>
